@@ -3,143 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bức Thư Của Tôi</title>
-    <!-- Nhúng Font chữ viết tay/hiện đại -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Tài Liệu Học Tập</title>
+    <!-- Font chữ hiện đại từ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Thiết lập chung với tone màu Dark Minimalist (Đen - Xám - Trắng) */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        body {
-            /* Nền tối sang trọng phía sau */
-            background-color: #0f172a;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
             font-family: 'Inter', sans-serif;
         }
 
-        /* Khung bức thư */
-        .letter-container {
-            background-color: #f8fafc; /* Màu giấy sáng */
-            color: #1e293b;            /* Màu chữ tối dễ đọc */
-            max-width: 650px;
-            width: 100%;
-            padding: 50px 40px;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
-                        0 10px 10px -5px rgba(0, 0, 0, 0.2);
-            position: relative;
-            border: 1px solid #e2e8f0;
+        body {
+            background-color: #121212; /* Đen nền chủ đạo */
+            color: #e0e0e0;            /* Trắng xám cho chữ */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
         }
 
-        /* Hiệu ứng tem thư trang trí ở góc trên bên phải */
-        .stamp {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            width: 60px;
-            height: 70px;
-            border: 2px dashed #cbd5e1;
+        /* Phần nội dung chính ở giữa */
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .profile-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-desc {
+            font-size: 1rem;
+            color: #888888; /* Xám tối cho mô tả */
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        /* Khung chứa các nút bấm */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Kiểu dáng cho từng nút tài liệu */
+        .btn {
+            background-color: #1e1e1e;     /* Xám đen cho nền nút */
+            color: #ffffff;                /* Chữ trắng */
+            border: 1px solid #333333;     /* Viền xám tinh tế */
+            padding: 16px 24px;
+            border-radius: 12px;           /* Bo góc mềm mại */
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.25s ease;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.8rem;
-            color: #94a3b8;
-            background: #f1f5f9;
         }
 
-        /* Tiêu đề thư */
-        .letter-header {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            color: #0369a1;
-            margin-bottom: 20px;
-        }
-
-        /* Nội dung thư */
-        .letter-body {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            color: #334155;
-        }
-
-        .letter-body p {
-            margin-bottom: 15px;
-        }
-
-        /* Phần chữ ký / lời kết */
-        .letter-footer {
-            text-align: right;
-            margin-top: 40px;
-        }
-
-        .letter-footer p {
-            font-style: italic;
-            color: #64748b;
-            margin-bottom: 5px;
-        }
-
-        .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            color: #0f172a;
-        }
-
-        /* Nút bấm */
-        .btn-box {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #0284c7;
-            color: #ffffff;
-            padding: 10px 25px;
-            border-radius: 20px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
+        /* Hiệu ứng khi rê chuột vào nút */
         .btn:hover {
-            background: #0369a1;
+            background-color: #2a2a2a;     /* Sáng hơn một chút khi hover */
+            border-color: #555555;         /* Viền sáng hơn */
+            transform: translateY(-2px);   /* Nhấc nhẹ lên */
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Chân trang */
+        footer {
+            font-size: 0.85rem;
+            color: #666666;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Khung bức thư -->
-    <div class="letter-container">
-        <!-- Tem thư trang trí -->
-        <div class="stamp">THƯ</div>
+    <!-- Nội dung chính -->
+    <div class="container">
+        <h1 class="profile-title">Kho Tài Liệu Học Tập</h1>
+        <p class="profile-desc">Nơi lưu trữ và tổng hợp các tài liệu môn học kỹ thuật chuyên ngành.</p>
 
-        <!-- Tiêu đề -->
-        <div class="letter-header">Thân gửi bạn,</div>
-
-        <!-- Nội dung bức thư -->
-        <div class="letter-body">
-            <p>Đây là một trang web được thiết kế theo giao diện mẫu một bức thư điện tử. Bạn hoàn toàn có thể thay đổi nội dung này thành lời giới thiệu bản thân, một thông điệp ý nghĩa hoặc bất cứ thứ gì bạn muốn chia sẻ lên internet.</p>
-            <p>Bố cục được đóng khung giống như một tờ giấy viết thư thực thụ nổi bật trên nền tối sang trọng.</p>
-        </div>
-
-        <!-- Lời kết và chữ ký -->
-        <div class="letter-footer">
-            <p>Thân ái,</p>
-            <div class="signature">Nguyễn Quốc Anh</div>
-        </div>
-
-        <!-- Nút tương tác -->
-        <div class="btn-box">
-            <a href="https://github.com" target="_blank" class="btn">Gửi Phản Hồi</a>
+        <!-- Danh sách các nút bấm -->
+        <div class="button-group">
+            <a href="#" class="btn">PHYSICS</a>
+            <a href="#" class="btn">CALCULUS</a>
+            <a href="#" class="btn">LINEAR</a>
         </div>
     </div>
+
+    <!-- Chân trang -->
+    <footer>
+        &copy; 2026 Designed for Study.
+    </footer>
 
 </body>
 </html>
