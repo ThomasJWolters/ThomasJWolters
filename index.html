@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kho Tài Liệu Học Tập</title>
-    <!-- Font chữ hiện đại từ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -27,7 +26,7 @@
 
         .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 800px;
             width: 100%;
             margin: auto;
             padding: 20px;
@@ -53,6 +52,7 @@
             flex-direction: column;
             gap: 16px;
             width: 100%;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -68,7 +68,7 @@
             letter-spacing: 1px;
             transition: all 0.25s ease;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             cursor: pointer;
             width: 100%;
@@ -83,18 +83,12 @@
             width: 100%;
         }
 
-        .dropdown-btn {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         .arrow {
             font-size: 0.8rem;
             transition: transform 0.3s ease;
         }
 
-        .dropdown-btn.active .arrow {
+        .btn.active .arrow {
             transform: rotate(180deg);
         }
 
@@ -106,25 +100,26 @@
             border-radius: 0 0 12px 12px;
             margin-top: -8px;
             border: 1px solid transparent;
+            text-align: left;
         }
 
         .dropdown-content.show {
-            max-height: 1000px;
+            max-height: 1200px;
             border-color: #333333;
             padding: 10px 0;
             margin-bottom: 10px;
+            overflow-y: auto;
         }
 
-        /* Các mục tài liệu PDF */
         .doc-item {
             display: block;
             padding: 12px 20px;
             color: #b0b0b0;
             text-decoration: none;
             font-size: 0.92rem;
-            text-align: left;
             transition: all 0.2s ease;
             border-left: 2px solid transparent;
+            cursor: pointer;
         }
 
         .doc-item:hover {
@@ -132,6 +127,47 @@
             color: #ffffff;
             border-left-color: #888888;
             padding-left: 25px;
+        }
+
+        .pdf-viewer-container {
+            margin-top: 30px;
+            width: 100%;
+            background-color: #1e1e1e;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .pdf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: #252525;
+            border-bottom: 1px solid #333333;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+
+        .close-pdf {
+            background: none;
+            border: none;
+            color: #888888;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .close-pdf:hover {
+            color: #ffffff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            background-color: #ffffff;
         }
 
         footer {
@@ -148,24 +184,39 @@
         <p class="profile-desc">Nơi lưu trữ và tổng hợp các tài liệu môn học kỹ thuật chuyên ngành.</p>
 
         <div class="button-group">
-            <!-- Mục PHYSICS -->
             <div class="dropdown-container">
-                <button class="btn dropdown-btn" onclick="toggleDropdown()">
+                <button class="btn" onclick="toggleDropdown('physicsSubMenu', this)">
                     <span>PHYSICS</span>
                     <span class="arrow">▼</span>
                 </button>
                 <div class="dropdown-content" id="physicsSubMenu">
-                    <!-- Thuộc tính target="_blank" giúp mở file PDF trực tiếp ngay trên tab mới của trình duyệt -->
-                    <a href="chuong1li1.pdf" target="_blank" class="doc-item">📄 chuong1li1.pdf</a>
-                    <a href="chuong2li2.pdf" target="_blank" class="doc-item">📄 chuong2li2.pdf</a>
-                    <a href="chuong3li3.pdf" target="_blank" class="doc-item">📄 chuong3li3.pdf</a>
-                    <a href="chuong4li4.pdf" target="_blank" class="doc-item">📄 chuong4li4.pdf</a>
+                    <!-- Có thêm chữ physics1/ ở trước tên file -->
+                    <a class="doc-item" onclick="openPDF('physics1/chuong1li1.pdf', 'Chương 1 - Physics')">📄 chuong1li1.pdf</a>
+                    <a class="doc-item" onclick="openPDF('physics1/chuong2li2.pdf', 'Chương 2 - Physics')">📄 chuong2li2.pdf</a>
+                    <a class="doc-item" onclick="openPDF('physics1/chuong3li3.pdf', 'Chương 3 - Physics')">📄 chuong3li3.pdf</a>
+                    <a class="doc-item" onclick="openPDF('physics1/chuong4li4.pdf', 'Chương 4 - Physics')">📄 chuong4li4.pdf</a>
+                    <a class="doc-item" onclick="openPDF('physics1/chuong5li1.pdf', 'Chương 5 - Physics')">📄 chuong5li1.pdf</a>
+                    <a class="doc-item" onclick="openPDF('physics1/chuong6li1.pdf', 'Chương 6 - Physics')">📄 chuong6li1.pdf</a>
+                    <a class="doc-item" onclick="openPDF('physics1/halliday & resrick.pdf', 'Sách Halliday & Resnick')">📖 halliday & resrick.pdf</a>
                 </div>
             </div>
 
-            <!-- Các nút môn khác -->
-            <a href="#" class="btn">CALCULUS</a>
-            <a href="#" class="btn">LINEAR</a>
+            <button class="btn">
+                <span>CALCULUS</span>
+                <span class="arrow">▼</span>
+            </button>
+            <button class="btn">
+                <span>LINEAR</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <div class="pdf-viewer-container" id="pdfViewerBox">
+            <div class="pdf-header">
+                <span id="pdfTitle">Đang xem tài liệu...</span>
+                <button class="close-pdf" onclick="closePDF()">✕ Đóng</button>
+            </div>
+            <iframe id="pdfFrame" src=""></iframe>
         </div>
     </div>
 
@@ -174,12 +225,29 @@
     </footer>
 
     <script>
-        function toggleDropdown() {
-            const btn = document.querySelector('.dropdown-btn');
-            const content = document.getElementById('physicsSubMenu');
-            
-            btn.classList.toggle('active');
+        function toggleDropdown(menuId, button) {
+            const content = document.getElementById(menuId);
+            button.classList.toggle('active');
             content.classList.toggle('show');
+        }
+
+        function openPDF(pdfFile, titleText) {
+            const viewerBox = document.getElementById('pdfViewerBox');
+            const pdfFrame = document.getElementById('pdfFrame');
+            const pdfTitle = document.getElementById('pdfTitle');
+
+            pdfTitle.innerText = "Đang xem: " + titleText;
+            pdfFrame.src = pdfFile;
+            viewerBox.style.display = "block";
+            viewerBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function closePDF() {
+            const viewerBox = document.getElementById('pdfViewerBox');
+            const pdfFrame = document.getElementById('pdfFrame');
+            
+            viewerBox.style.display = "none";
+            pdfFrame.src = "";
         }
     </script>
 
