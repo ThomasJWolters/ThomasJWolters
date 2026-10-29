@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bức Thư Của Tôi</title>
+    <!-- Nhúng Font chữ viết tay/hiện đại -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* Nền tối sang trọng phía sau */
+            background-color: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Khung bức thư */
+        .letter-container {
+            background-color: #f8fafc; /* Màu giấy sáng */
+            color: #1e293b;            /* Màu chữ tối dễ đọc */
+            max-width: 650px;
+            width: 100%;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+                        0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Hiệu ứng tem thư trang trí ở góc trên bên phải */
+        .stamp {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            width: 60px;
+            height: 70px;
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            background: #f1f5f9;
+        }
+
+        /* Tiêu đề thư */
+        .letter-header {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #0369a1;
+            margin-bottom: 20px;
+        }
+
+        /* Nội dung thư */
+        .letter-body {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #334155;
+        }
+
+        .letter-body p {
+            margin-bottom: 15px;
+        }
+
+        /* Phần chữ ký / lời kết */
+        .letter-footer {
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        .letter-footer p {
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 5px;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #0f172a;
+        }
+
+        /* Nút bấm */
+        .btn-box {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0284c7;
+            color: #ffffff;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Khung bức thư -->
+    <div class="letter-container">
+        <!-- Tem thư trang trí -->
+        <div class="stamp">THƯ</div>
+
+        <!-- Tiêu đề -->
+        <div class="letter-header">Thân gửi bạn,</div>
+
+        <!-- Nội dung bức thư -->
+        <div class="letter-body">
+            <p>Đây là một trang web được thiết kế theo giao diện mẫu một bức thư điện tử. Bạn hoàn toàn có thể thay đổi nội dung này thành lời giới thiệu bản thân, một thông điệp ý nghĩa hoặc bất cứ thứ gì bạn muốn chia sẻ lên internet.</p>
+            <p>Bố cục được đóng khung giống như một tờ giấy viết thư thực thụ nổi bật trên nền tối sang trọng.</p>
+        </div>
+
+        <!-- Lời kết và chữ ký -->
+        <div class="letter-footer">
+            <p>Thân ái,</p>
+            <div class="signature">Nguyễn Quốc Anh</div>
+        </div>
+
+        <!-- Nút tương tác -->
+        <div class="btn-box">
+            <a href="https://github.com" target="_blank" class="btn">Gửi Phản Hồi</a>
+        </div>
+    </div>
+
+</body>
+</html>
