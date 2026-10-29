@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ Của Tôi</title>
+    <!-- Nhúng Font chữ hiện đại từ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Thiết lập chung */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        /* Phần nội dung chính ở giữa */
+        .hero {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        /* Nút bấm tương tác */
+        .btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+        .btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+        }
+        /* Chân trang */
+        footer {
+            font-size: 0.9rem;
+            color: #64748b;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nội dung chính -->
+    <div class="hero">
+        <h1>Xin Chào, Chào Mừng!</h1>
+        <p>Đây là trang chủ đầu tiên của tôi được xây dựng từ con số 0. Giao diện được thiết kế tối giản, hiện đại và sẵn sàng đưa lên mạng bất cứ lúc nào.</p>
+        <a href="https://github.com" target="_blank" class="btn">Khám Phá Ngay</a>
+    </div>
+
+    <!-- Chân trang -->
+    <footer>
+        &copy; 2026 Designed with passion.
+    </footer>
+
+</body>
+</html>
