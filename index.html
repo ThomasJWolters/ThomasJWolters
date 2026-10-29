@@ -7,7 +7,6 @@
     <!-- Font chữ hiện đại từ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Thiết lập chung với tone màu Dark Minimalist (Đen - Xám - Trắng) */
         * {
             margin: 0;
             padding: 0;
@@ -16,8 +15,8 @@
         }
 
         body {
-            background-color: #121212; /* Đen nền chủ đạo */
-            color: #e0e0e0;            /* Trắng xám cho chữ */
+            background-color: #121212;
+            color: #e0e0e0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -49,7 +48,6 @@
             line-height: 1.5;
         }
 
-        /* Khung chứa các nút bấm */
         .button-group {
             display: flex;
             flex-direction: column;
@@ -58,7 +56,6 @@
             margin: 0 auto;
         }
 
-        /* Kiểu dáng cho từng nút môn học */
         .btn {
             background-color: #1e1e1e;
             color: #ffffff;
@@ -82,30 +79,25 @@
             border-color: #555555;
         }
 
-        /* Khung bọc cho môn Physics có menu thả xuống */
         .dropdown-container {
             width: 100%;
         }
 
-        /* Nút Physics đặc biệt có mũi tên */
         .dropdown-btn {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        /* Biểu tượng mũi tên */
         .arrow {
             font-size: 0.8rem;
             transition: transform 0.3s ease;
         }
 
-        /* Khi menu mở, xoay mũi tên chỉ xuống */
         .dropdown-btn.active .arrow {
             transform: rotate(180deg);
         }
 
-        /* Danh sách tài liệu ẩn ban đầu */
         .dropdown-content {
             max-height: 0;
             overflow: hidden;
@@ -116,18 +108,17 @@
             border: 1px solid transparent;
         }
 
-        /* Khi mở menu thì hiện danh sách (tăng max-height) */
         .dropdown-content.show {
-            max-height: 1000px; /* Đủ lớn để chứa danh sách tài liệu */
+            max-height: 1000px;
             border-color: #333333;
             padding: 10px 0;
             margin-bottom: 10px;
         }
 
-        /* Các mục tài liệu bên trong */
+        /* Các mục tài liệu PDF */
         .doc-item {
             display: block;
-            padding: 10px 20px;
+            padding: 12px 20px;
             color: #b0b0b0;
             text-decoration: none;
             font-size: 0.92rem;
@@ -143,7 +134,6 @@
             padding-left: 25px;
         }
 
-        /* Chân trang */
         footer {
             font-size: 0.85rem;
             color: #666666;
@@ -158,19 +148,18 @@
         <p class="profile-desc">Nơi lưu trữ và tổng hợp các tài liệu môn học kỹ thuật chuyên ngành.</p>
 
         <div class="button-group">
-            <!-- Mục PHYSICS có menu thả xuống -->
+            <!-- Mục PHYSICS -->
             <div class="dropdown-container">
                 <button class="btn dropdown-btn" onclick="toggleDropdown()">
                     <span>PHYSICS</span>
                     <span class="arrow">▼</span>
                 </button>
                 <div class="dropdown-content" id="physicsSubMenu">
-                    <a href="#" class="doc-item">📁 physics1</a>
-                    <a href="#" class="doc-item">📄 chuong1li1.pdf</a>
-                    <a href="#" class="doc-item">📄 chuong2li2.pdf</a>
-                    <a href="#" class="doc-item">📄 chuong3li3.pdf</a>
-                    <a href="#" class="doc-item">📄 chuong4li4.pdf</a>
-                    <a href="#" class="doc-item">📄 halliday & resrick (Parts)</a>
+                    <!-- Thuộc tính target="_blank" giúp mở file PDF trực tiếp ngay trên tab mới của trình duyệt -->
+                    <a href="chuong1li1.pdf" target="_blank" class="doc-item">📄 chuong1li1.pdf</a>
+                    <a href="chuong2li2.pdf" target="_blank" class="doc-item">📄 chuong2li2.pdf</a>
+                    <a href="chuong3li3.pdf" target="_blank" class="doc-item">📄 chuong3li3.pdf</a>
+                    <a href="chuong4li4.pdf" target="_blank" class="doc-item">📄 chuong4li4.pdf</a>
                 </div>
             </div>
 
@@ -185,7 +174,6 @@
     </footer>
 
     <script>
-        // Hàm xử lý bật/tắt menu trượt
         function toggleDropdown() {
             const btn = document.querySelector('.dropdown-btn');
             const content = document.getElementById('physicsSubMenu');
